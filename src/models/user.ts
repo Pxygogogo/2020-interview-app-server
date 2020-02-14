@@ -2,8 +2,13 @@ import { Schema } from 'mongoose';
 
 const userSchema = new Schema({
   openid: String,
-  nickname: String,
-  avatar: String,
+  avatarUrl: String,
+  city: String,
+  country: String,
+  gender: Number,
+  language: String,
+  nickName: String,
+  province: String,
 }, {
   versionKey: false,
   timestamps: {

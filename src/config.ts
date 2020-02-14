@@ -7,7 +7,8 @@ dotenv.config({
 
 export default {
   port: process.env.PORT || 8080,
-  appid: process.env.APP_ID || '',
-  appsecret: process.env.APP_SECRET || '',
+  appId: process.env.APP_ID || '',
+  appSecret: process.env.APP_SECRET || '',
   mongo: process.env.MONGO || 'mongodb://localhost:27018/interview',
+  jwtKey: '2020-InTeRvIeW',
 };

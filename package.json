@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev ./src/index.ts"
+    "start": "ts-node-dev --clear ./src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/koa": "^2.11.1",
     "@types/koa-router": "^7.4.0",
+    "@types/mongoose": "^5.7.1",
     "@types/node": "^13.7.1",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.5"
@@ -30,6 +31,7 @@
     "dotenv": "^8.2.0",
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
-    "koa-router": "^8.0.7"
+    "koa-router": "^8.0.7",
+    "mongoose": "^5.9.0"
   }
 }

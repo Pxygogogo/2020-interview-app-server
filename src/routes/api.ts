@@ -44,5 +44,10 @@ router.use('/detail', async ctx => {
     const { order = 1, pageSize = 20, entityId, entityType = 8 } = ctx.query;
     ctx.body = (await request.get(`/comment/list-v3?order=${order}&pageSize=${pageSize}&entityId=${entityId}&entityType=${entityType}`)).data;
 });
+//热门职位
+router.use('/hot-job', async ctx => {
+    ctx.body = (await request.get('/weixin/mjdq/hot-job')).data;
+})
+
 
 export default router;

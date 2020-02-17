@@ -30,22 +30,22 @@ router.get('/search', async ctx => {
     ctx.body = (await request.get(`/weixin/mjdq/search?query=${query}&order=${order}&page=${page}`)).data;
 });
 //企业面经
-router.use('/company-expierence', async ctx => {
+router.get('/company-expierence', async ctx => {
     const { page } = ctx.query
     ctx.body = (await request.get(`/weixin/mjdq/discuss/community/134?page=${page}`)).data;
 })
 //面经详情
-router.use('/discuss-info', async ctx => {
+router.get('/discuss-info', async ctx => {
     const { discussId } = ctx.query;
     ctx.body = (await request.get(`/discuss/get-discuss-info?discussId=${discussId}`)).data;
 });
 //面经评论
-router.use('/detail', async ctx => {
+router.get('/detail', async ctx => {
     const { order = 1, pageSize = 20, entityId, entityType = 8 } = ctx.query;
     ctx.body = (await request.get(`/comment/list-v3?order=${order}&pageSize=${pageSize}&entityId=${entityId}&entityType=${entityType}`)).data;
 });
 //热门职位
-router.use('/hot-job', async ctx => {
+router.get('/hot-job', async ctx => {
     ctx.body = (await request.get('/weixin/mjdq/hot-job')).data;
 })
 

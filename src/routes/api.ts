@@ -30,9 +30,10 @@ router.get('/search', async ctx => {
     ctx.body = (await request.get(`/weixin/mjdq/search?query=${decodeURIComponent(query)}&order=${order}&page=${page}`)).data;
 });
 //企业面经
-router.get('/company-expierence', async ctx => {
-    const { companyId, page } = ctx.query
-    ctx.body = (await request.get(`/weixin/mjdq/discuss/community/${companyId}?page=${page}`)).data;
+router.get('/company-expierence/:id', async ctx => {
+    const {id} = ctx.params;
+    const { page } = ctx.query
+    ctx.body = (await request.get(`/weixin/mjdq/discuss/community/${id}?page=${page}`)).data;
 })
 //面经详情
 router.get('/discuss-info', async ctx => {

@@ -27,12 +27,12 @@ router.get('/discuss', async ctx => {
 //搜索
 router.get('/search', async ctx => {
     const { query, order, page } = ctx.query;
-    ctx.body = (await request.get(`/weixin/mjdq/search?query=${query}&order=${order}&page=${page}`)).data;
+    ctx.body = (await request.get(`/weixin/mjdq/search?query=${decodeURIComponent(query)}&order=${order}&page=${page}`)).data;
 });
 //企业面经
 router.get('/company-expierence', async ctx => {
-    const { page } = ctx.query
-    ctx.body = (await request.get(`/weixin/mjdq/discuss/community/134?page=${page}`)).data;
+    const { companyId, page } = ctx.query
+    ctx.body = (await request.get(`/weixin/mjdq/discuss/community/${companyId}?page=${page}`)).data;
 })
 //面经详情
 router.get('/discuss-info', async ctx => {

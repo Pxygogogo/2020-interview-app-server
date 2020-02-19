@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import config from '../config';
 import { CustomContext } from '../typings';
 
-const PUBLIC_URL_REGX = /^\/[auth|test]/;
+const PUBLIC_URL_REGX = /^\/auth/;
 const errorHandler: Middleware<DefaultState, CustomContext> = async (ctx, next) => {
   if (!PUBLIC_URL_REGX.test(ctx.url)) {
     let token = ctx.get('authorization');

@@ -27,7 +27,7 @@ router.get('/discuss', async ctx => {
 //搜索
 router.get('/search', async ctx => {
     const { query, order, page } = ctx.query;
-    ctx.body = (await request.get(`/weixin/mjdq/search?query=${decodeURIComponent(query)}&order=${order}&page=${page}`)).data;
+    ctx.body = (await request.get(`/weixin/mjdq/search?query=${query}&order=${order}&page=${page}`)).data;
 });
 //企业面经
 router.get('/company-expierence/', async ctx => {

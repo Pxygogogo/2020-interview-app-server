@@ -13,7 +13,6 @@ router.post('/login', async (ctx) => {
   const { code, userInfo } = ctx.request.body as { code: string, userInfo: WechatUserInfo };
   if (!code || !userInfo) throw Error('缺少参数');
   const res = await wechatApi.auth.code2Session(code);
-  console.log(res);
   if (typeof res.openid === 'undefined') throw Error('登录失败');
   let user = await ctx.models.User.findOne({ openid: res.openid });
   if (!user) {

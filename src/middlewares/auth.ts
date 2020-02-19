@@ -6,6 +6,7 @@ import { CustomContext } from '../typings';
 const PUBLIC_URL_REGX = /^\/auth/;
 const errorHandler: Middleware<DefaultState, CustomContext> = async (ctx, next) => {
   if (!PUBLIC_URL_REGX.test(ctx.url)) {
+    console.log(ctx.url)
     let token = ctx.get('authorization');
     token = token.substring(7);
     const payload: any = jwt.verify(token, config.jwtKey);

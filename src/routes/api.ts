@@ -26,8 +26,7 @@ router.get('/discuss', async ctx => {
 });
 //搜索
 router.get('/search', async ctx => {
-    const { query, order, page } = ctx.query;
-    console.log(decodeURIComponent(query))
+    const { query, order = "hot", page = 1 } = ctx.query;
     ctx.body = (await request.get(`/weixin/mjdq/search?query=${encodeURIComponent(query)}&order=${order}&page=${page}`)).data;
 });
 //企业面经
